@@ -1,0 +1,632 @@
+/* HOME PAGE starts here */
+* {
+  box-sizing: border-box;
+}
+
+body{
+    font: 15px/1.5 Arial, Helvetica,sans-serif;
+    background-color: #F6F5F2;
+    padding:0;
+    margin:0;
+    overflow: visible;
+}
+
+.container, .nav_container{
+    width:100%;
+    margin:auto;
+    overflow:hidden;
+  }
+
+
+/*  HEADER */
+    header{
+    color:coral;
+    padding-top:10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: block;
+    height: 80px;
+  } 
+  
+  header a{
+    color:coral;
+    text-decoration:none; 
+    font-size:20px;
+  }
+  
+  header li{
+    display:inline;
+  }
+  
+  header #branding{
+    float:left;
+  }
+  
+  header #branding h1{
+    margin:0;
+  }
+  
+  nav, .top-nav{
+    float: right;
+    margin-top:10px;
+    word-spacing: 20px;
+    position: sticky;
+  }
+
+  header .highlight, header .current a{
+    color:rgba(105, 8, 8, 0.89);
+    font-weight:bold;
+  }
+  
+  header a:hover{
+    color:red;
+    font-weight:bold;
+  }  
+
+   #p-box{
+    width: 100%;
+    height: 900px;
+    padding: 0;
+    margin: 0;
+    display: block;
+    background:url('../media/marcella-marcella-sqdrVokiYsE-unsplash.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+  }
+  
+  #p-box h1{
+    color: rgba(105, 8, 8, 0.89);
+    position: absolute;
+    font-size: 46px;
+    top: 100px;
+    left: 100px;
+}
+  
+  .footer {
+    background-color: #F6F5F2;
+    text-align: center;
+  }
+  .footer ul {
+    padding: 0px;
+    margin: 0px;
+  }
+  .footer ul li {
+    list-style: none;
+    display: inline-block;
+  }
+
+ .footer .social-icons {
+    margin-bottom: 30px; 
+    margin-top: 10px;
+  }
+ .footer .social-icons ul li {
+    margin: 0px 10px;
+  }
+  .footer .social-icons a {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    background-color: #f44336;
+    text-align: center;
+    display: inline-block;
+    line-height: 33px;
+    border-radius: 50%;
+    font-size: 13px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  .footer .social-icons a:hover {
+    background-color: orange;
+  }
+  .copyrigth h1{
+    color:  rgba(105, 8, 8, 0.89);
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+  /* LOGIN PAGE starts here */
+  #log-box{
+    width: 100%;
+    height: 800px;
+    padding: 0;
+    margin: 0;
+    display: block;
+    background:url('../media/homePage2.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+  }
+
+  #log-box h1{
+    color: rgba(105, 8, 8, 0.89);
+    position: absolute;
+    font-size: 46px;
+    top: 100px;
+    left: 100px;
+}
+
+
+.lg{
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 40px); 
+} 
+
+.lg div{
+	float: left;
+	color: coral;
+	font-family: 'Exo', sans-serif;
+	font-size: 35px;
+	font-weight: 200;
+}
+
+.login{
+  position: absolute;
+  float: left;
+  top: calc(50% - 100px);
+  left: calc(50% - 130px); 
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+}
+
+.login input[type=text]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 2px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: rgba(105, 8, 8, 0.89);
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+}
+
+.login input[type=password]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 2px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: rgba(105, 8, 8, 0.89);
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login button[type=button]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login button[type=button]:hover{
+  background-color: rgb(229, 220, 194);
+}
+
+.login button[type=button]:active{
+  background-color: coral;
+}
+
+.login input[type=text]:focus{
+	outline: none;
+	border: 1px solid orangered;
+}
+
+.login input[type=password]:focus{
+	outline: none;
+	border: 1px solid orangered;
+}
+
+.login button[type=button]:focus{
+	outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: #a18d6c;
+}
+
+::-moz-input-placeholder{
+   color: #a18d6c;
+}
+
+
+/* WELCOME PAGE starst here */
+
+.welcome-box{
+  width: 100%;
+  height: 800px;
+  display: block;
+  padding: 0;
+  margin: 0;
+  background:url('../media/9330_Macro-water-drops-on-a-wonderful-red-flower.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  color: rgba(105, 8, 8, 0.89);
+  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  font-style: italic;
+  
+  min-height: 400px;
+  text-align: center;
+}
+
+.welcome-box h1{
+  font-size: 56px;
+  top: 60px;
+  left: 300px;
+}
+
+.welcome-box h4{
+  font-size: 30px;
+  top: 180px;
+  left: 50px;
+}
+
+
+/*    INVOICE PAGE starst here */
+  /* .invoice-box{
+  width: 100%;
+  height: 760px;
+  padding: 0;
+  margin: 0;
+  display: block;  
+  background:url('../media/aaron-burden-3iedACJIXxA-unsplash.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;  
+}    */
+ #showcase_checkout{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: block;  
+  background:url('../media/aaron-burden-3iedACJIXxA-unsplash.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position:relative; 
+} 
+.invoice-box h4{
+  font-size: 30px;
+  color: black;
+  top: 5%;
+  text-align: center;
+}
+
+#choiseMetodOfPayment{
+  display: grid;
+  grid-template-columns: repeat(3, 130px);
+  align-items: center;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.payment-form, #cardlabel{
+  color: antiquewhite;
+}
+.row {
+  display: flex;
+}
+
+.column1 {
+  flex: 50%;
+  padding: 10px;
+  margin-left:3%; 
+   height: 300px;
+   margin-top: 10px;
+}
+.column2 {
+  flex: 50%;
+  padding: 10px;
+  height: 300px;
+}
+.column1 input[type=text], .column1 input[type=number], #expiration{
+	width: 250px;
+	height: 30px;
+	background: white;
+	border: 2px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: black;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+}
+
+.column2 input[type=text]{
+	width: 250px;
+	height: 30px;
+	background: white;
+	border: 2px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: black;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+  padding: 4px;
+  
+}
+.input-control::-moz-placeholder {
+  font-weight: 100;
+}
+
+.invoice-box button[type=submit], .invoice-box button[type=reset]   {
+	width: 250px;
+	height: 38px;
+	background:	moccasin;
+  border: 1px solid goldenrod;
+	cursor: pointer;
+	border-radius: 2px;
+	color: black;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: bolder;
+	padding: 6px;
+  margin-top: 10px;
+}
+
+.invoice-box button[type=submit]:hover{
+  background-color: gold;
+}
+
+.invoice-box button[type=submit]:active{
+  background-color: #ADFF2F;
+}
+
+.invoice-box button[type=reset]:hover{
+  background-color: gold;
+}
+
+.invoice-box button[type=reset]:active{
+  background-color: #ADFF2F;
+}
+label{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#cardlabel{
+  font-size: 24px;
+  font-weight: bold;
+}
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  outline: 2px solid orange;
+}
+
+form img{
+  width: 80px;
+  height: 40px;
+}
+.payment{
+  color: antiquewhite;
+  font-weight: bolder;
+}
+#exMonth{
+  width: 120px;
+}
+
+#total{
+  color: rgb(41, 33, 33);
+  font-size: 22px;
+  font-weight: bolder;
+}
+.fin{
+  color: rgb(41, 33, 33);
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+
+/* CART PAGE is starting here */
+.cart{
+  word-spacing: 0.1em;
+}
+.cart ion-icon{
+  vertical-align: center;
+  font-size: 20px;
+}
+.products-container, .products{
+  max-width: 650px;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+/* .products-container ion-icon */
+
+.products{
+  max-width: 650px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
+.remove, .delete-item{
+  border: 0;
+  padding: 4px 8px;
+  background-color: orange;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.cartcheckout{
+  border: 0;
+  padding: 4px 8px;
+  background-color: greenyellow;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.remove:hover {
+  background-color: #a44;
+}
+
+
+.product-header{
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  justify-content: center;
+  /* border-bottom: 4px solid lightgrey; */
+  margin: 0 auto;
+}
+
+.product-title{
+  width: 45%;
+  border-bottom: 2px solid grey;
+}
+
+.price{
+  width: 15%;
+  border-bottom: 2px solid grey;
+  display: flex;
+  align-items: center;
+}
+.quantity{
+  width: 30%;
+  border-bottom: 2px solid grey;
+  display: flex;
+  align-items: center;
+}
+
+.total{
+  width: 10%;
+  border-bottom: 2px solid grey;
+  display: flex;
+  align-items: center;
+}
+
+.product{
+  width: 45%;
+  border-bottom: 2px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.basketTotalContainer, .basketTotalContainer2 {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.basketTotalTitle, .adjustedPriceTax{
+  width: 30%;
+}
+
+.basketTotal, .PriceTax{
+  width: 10%;
+} 
+
+/* .invalid-feedback{
+  display: inline !important;
+} */
+
+@media(max-width: 768px){
+  header #branding,
+  header nav,
+  .container, .gallery-box,
+  header nav li, 
+  .lg, .login,
+  #welcome-box
+
+  header{
+    padding-bottom:20px;
+  }
+
+  #showcase h1{
+    margin-top:40px;
+  } 
+
+}
+
+/*Gallery page*/
+/* .gallery-box{
+  width: 100%;
+  height: 800px;
+  display: block;
+  padding: 0;
+  margin: 0;
+  /* background:url('../media/9330_Macro-water-drops-on-a-wonderful-red-flower.jpg') no-repeat center center fixed;  */
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  color: rgba(105, 8, 8, 0.89);
+  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  font-style: italic;
+  
+  min-height: 400px;
+  text-align: center; */
+/*} */
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+ .gallery-box{
+  display: block;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: block;
+} 
+
+.row-flex {
+  width: 100%;
+}

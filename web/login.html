@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<script language="javascript" type="text/javascript" 
+  src="./includes/header.txt"></script>
+	<body>
+    <header>
+      <div class="container">
+        <div id="branding">
+            <h1><span class="highlight">Flower Power</span> Florististic</h1>
+        </div>
+        <nav class="top-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="current"><a href="login.html">Login</a></li>
+            <li><a href="signup.html">SignUp</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+          <div class="clr"></div>
+            <div id="log-box">
+                <div class="lg">
+                    <div>Login</div>
+                </div> 
+                <br>
+              <form onsubmit="return check()" name="formLogin">
+                <div class="login">
+                  <input id="uname" type="text"  placeholder="username" name="userid" autocomplete="false"><br>
+                  <input id="pass" type="password"  placeholder="password" name="pswd" autocomplete="false"><br>
+                  <button type="button" onclick="check(this.form)">Let Me In</button><br><br>
+									<div><a href="./signup.html">First use?</a></div>
+                </div>
+								
+              </form>
+							
+            </div>
+						<script language="javascript" type="text/javascript" 
+						src="./includes/footer.txt"></script>
+        </div>
+    </section>
+</body>
+<script src="./js/js_login.js"></script>
+</html>

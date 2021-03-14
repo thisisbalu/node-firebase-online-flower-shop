@@ -1,0 +1,12 @@
+
+document.write(`<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Flower Store Website">
+<meta name="keywords" content="flower, delivery, flower_delivery, beauty, flower_online, present">
+<title>Final Project</title>
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/styleSheet.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>`)
+

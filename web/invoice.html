@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<script language="javascript" type="text/javascript" 
+  src="./includes/header.txt"></script>
+<body>
+    <header>
+      <div class="container">
+        <div id="branding">
+            <h1><span class="highlight">Flower Power</span> Florististic</h1>
+        </div>
+        <nav class="top-nav">
+          <ul>
+            <li><a href="welcome.html">Welcome</a></li>
+            <li><a href="flowergallery.html"><ion-icon name="rose"></ion-icon>FlowerGallery</a></li>
+            <li><a href="shopping.html">Shopping</a></li>
+            <li  class="cart"><a href="cart.html"><ion-icon name="cart"></ion-icon> ShoppingCart <span> 0</span></a></li>
+            <li  class="current"><a href="invoice.html">Invoice</a></li>
+            <li><a href="index.html">Logout</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <div class="invoice-box">
+                <h4>Finalise Payment</h4>
+                <div class="row">
+                    <div class="column1">
+                        <!--<form class="payment" name="payMethod" id="choice"> -->
+                            <div class="payment" name="payMethod" id="choice">  <p>Choose your payment method</p>  </div>
+                            <div id="choiseMetodOfPayment">
+                                <img src="/media/22.png"><img src="/media/2.png"><img src="/media/1.png">
+                                <input id="amcard" name="typecard" type="radio" value="amexpcard">
+                                <input id="mscard" name="typecard" type="radio" value="mastercard">
+                                <input id="vscard" name="typecard" type="radio" value="visacard" >
+                        </div>
+                    <p id="cardlabel">Credit Card Info</p>
+                        <form class="payment-form" name="myForm">
+                            <div class="input-control">
+                                <label for="cardholder">*Name on the Card</label>
+                                <div><input type="text" name="Cardholder" id="cardholder" onfocus="this.value=''" placeholder="Name on the Card"></div>
+                            </div>
+
+                            <div class="input-control">
+                                <label for="cardnumber">*Card Number</label>
+                                <div class="icon-input">
+                                    <input type="number" name="Cardnumber" id="cardnumber" minLength="15" maxlength="16"placeholder="Card Number" onkeypress="if (this.value.length > 16) return false;">
+                                </div>
+                            </div>
+                            <div class="input-control">
+                                <label for="cvc">*CVC</label>
+                                <div><input type="text" name="cardcvc" id="cvc" placeholder="CVC" maxlength="3"></div>
+                            </div>
+                        
+                            <div class="input-control">
+                                <label for="expiration">Expiration Date</label>
+                                <div>
+                                <input  maxlength="7" id="expiration" placeholder="mm/yyyy" >
+                                </div>
+                            </div>
+                            <div><button type="reset">Clear Order</button></div>
+                    </div>
+
+                    <div class="column2">
+                        <p id="cardlabel">Shipping Address</p>
+
+                            <div class="input-control">
+                                <label for="customer">*Your Full Name</label>
+                                <div><input type="text" name="customername" id="customer" placeholder="Full Name"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="shipaddress1">*Your Address</label>
+                                <div><input type="text" name="shipadrs" id="shipaddress1" placeholder="Address"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="shipaddress2">Address Line 2</label>
+                                <div><input type="text" name="shipaddress" id="shipaddress2"  placeholder="Address"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="city">*City</label>
+                                <div><input type="text" name="cityname" id="city" placeholder="City"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="zip">*Postal Code</label>
+                                <div><input type="text" name="postalcode" id="zip" placeholder="Postal Code"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="province">*Province</label>
+                                <div><input type="text" name="provincename" id="province" placeholder="Province"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="country">*Country</label>
+                                <div><input type="text" name="countryname" id="country" placeholder="Country"></div>
+                            </div>
+
+                            <div class="input-control">
+                                <div class="fin">
+                                 Total Price:  <span id="total"> </span>$
+                                </div>
+                            </div>
+                            <button type="submit" id="card-btn">Place Order</button>
+                        </form>
+                    </div>
+                    </div>
+            </div>
+            </div>
+						<script language="javascript" type="text/javascript" 
+						src="./includes/footer.txt"></script>       
+    </section>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</body>
+</html>
