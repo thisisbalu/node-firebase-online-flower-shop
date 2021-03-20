@@ -11,7 +11,7 @@ require('dotenv/config');
 // Import Routes
 const userRoutes = require('./routes/users');
 const { options } = require('./routes/users');
-//const itemRoutes = require('./routes/items');
+const productRoutes = require('./routes/products');
 //const { options } = require('./routes/items');
 
 // Middleware
@@ -32,7 +32,7 @@ app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }));
 // parse an HTML body into a string
 app.use(bodyParser.text({ type: 'text/html' }));
 app.use('/users', userRoutes);
-//app.use('/items', itemRoutes)
+app.use('/products', productRoutes);
 app.use(express.static("web", options));
 router.get('/', function (req, res) {
     res.render('./index.html');
