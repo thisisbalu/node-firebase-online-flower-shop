@@ -10,10 +10,15 @@ require('dotenv/config');
 // Import Routes
 const userRoutes = require('./routes/users');
 const { options } = require('./routes/users');
+
+const itemRoutes = require('./routes/items');
+const { options } = require('./routes/items');
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/users', userRoutes);
+app.use('/items', itemRoutes)
 app.use(express.static("web", options));
 router.get('/', function (req, res) {
     res.render('./index.html');
