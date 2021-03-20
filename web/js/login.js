@@ -1,5 +1,10 @@
 // this function will be available on after loading all the html document
 $(document).ready(function () {
+	const user = localStorage.getItem('FLOWER-SHOP-LOGGED-IN-USER');
+    if(!!user) {
+        window.location.href = "/welcome.html";
+    }
+
 	console.log("ready!");
 	$("#login").on("click", function () {
 		console.log("login in!");
@@ -41,7 +46,7 @@ $(document).ready(function () {
 					// similar to cookie but more good than the cookie
 					// you can check this value set in browser
 					// chrome dev tools -> application -> in sotrage check local storage
-					localStorage.setItem('user', JSON.stringify(data));
+					localStorage.setItem('FLOWER-SHOP-LOGGED-IN-USER', JSON.stringify(data));
 					window.location.href = "/welcome.html";
 				}
 			});

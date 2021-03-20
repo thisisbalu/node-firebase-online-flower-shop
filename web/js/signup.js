@@ -1,30 +1,70 @@
-$('#password, #confirm_password').on('keyup', function () {
-	if ($('#password').val() == $('#confirm_password').val()) {
-		$('#message').html('Passwords match! Well done!').css('color', 'green');
-		
-	} else 
-		$('#message').html('Passwords do not match').css('color', 'red');
-});
+$(document).ready(function () {
+	const USER_LOGGED_IN = localStorage.getItem('FLOWER-SHOP-LOGGED-IN-USER');
+	if (!!USER_LOGGED_IN) {
+		window.location.href = "/welcome.html";
+	}
 
+	$('#password, #confirm_password').on('keyup', function () {
+		if ($('#password').val() == $('#confirm_password').val()) {
+			$('#message').html('Passwords match! Well done!').css('color', 'green');
+		} else
+			$('#message').html('Passwords do not match').css('color', 'red');
+	});
 
-function check(form){
+	$("#register").on("click", function () {
+		console.log("login in!");
+		$.fn.check();
+	});
 
-	var username = document.getElementById("uname");
-	var email = document.getElementById("email");
-	var password = document.getElementById("confirm_password");
-
-	if(username.value.trim()=="" || email.value.trim()=="" || password.value.trim()==""){
-	
+	$.fn.check = function () {
+		var username = $("#uname").val();
+		var email = $("#email").val();
+		var password = $("#confirm_password").val();
+		if (username.trim() == "" || email.trim() == "" || password.trim() == "") {
 			alert("Please fill all the fields");
-			return false;
-	}
-	else{
-	
-			alert(`Successful registration!`);
-							window.location.href = "/login.html";
-			true;
-	}
+		}
+		else {
+			var payload = {
+				userName: username,
+				password: password,
+				email: email
+			}
+			// First check if username already exists or not
+			$.ajax({
+				url: '/users/' + username,
+				type: 'GET',
+				error: function (res) {
+					alert("Username and Password combination is wrong! Please try again!");
+				},
+				success: function (data) {
+					// do not confuse with !!data it is just a way to check not null in java script
+					// if you want to check more read about falsey values in javascript
+					// here in the first ajax call i am checking is the user exist with the user name
+					// if exists api is returning the users in array..
+					// if array is empty user doesnot exist
+					// if user does not exist then register user with given
+					if (!!data && data.length == 0) {
+						$.fn.addUser(payload);
+					} else {
+						alert("User already exist with the provided username, Please provide different username.");
+					}
+				}
+			});
+		}
+	};
 
-}
-
-		
+	$.fn.addUser = function (payload) {
+		$.ajax({
+			url: '/users/',
+			type: 'POST',
+			data: payload,
+			error: function (res) {
+				alert("Something went wrong! Please try again!");
+			},
+			success: function (data) {
+				console.log(data);
+				window.location.href = "/login.html";
+			}
+		});
+	};
+});

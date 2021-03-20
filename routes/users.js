@@ -19,18 +19,15 @@ router.get('/:userName', async (req, res) => {
         res.status(200).json(user);
     } catch (err) {
         res.status(500).json({ message: err });
-    }
+    } 
 });
 
 router.post('/check', async (req, res) => {
     try {
-        console.log(req.body);
         const user = await User.find({
             userName: req.body.userName,
             password: req.body.password
         });
-        console.log("+++++");
-        console.log(user);
         if(user.length > 0) {
             res.status(200).json(user[0]);
         } else {
@@ -43,12 +40,12 @@ router.post('/check', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const user = new User({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        firstName: !!req.body.firstName ? req.body.firstName : "",
+        lastName: !!req.body.lastName ? req.body.lastName : "",
         email: req.body.email,
         password: req.body.password,
-        phone: req.body.phone,
-        address: req.body.address,
+        phone: !!req.body.phone ? req.body.phone : "",
+        address: !!req.body.address ? req.body.address : "",
         userName: req.body.userName,
         role: req.body.role
     });
