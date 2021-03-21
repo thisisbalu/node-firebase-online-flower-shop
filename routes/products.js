@@ -14,10 +14,10 @@ router.get('/', async (req, res) => {
 
 router.get('/:title', async (req, res) => {
 	try {
-		const user = await Product.find({
+		const product = await Product.find({
 			title: req.params.title
 		});
-		res.status(200).json(item);
+		res.status(200).json(product);
 	} catch (err) {
 		res.status(500).json({ message: err });
 	}
