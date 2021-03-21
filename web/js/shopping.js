@@ -28,7 +28,7 @@ $(document).ready(function () {
                 '<div class="card-body">' +
                 '<h5 class="card-title"> ' + product.title.substring(0, 25) + ' </h5>' +
                 '<p class="card-text"> ' + product.description.substring(0, 100) + '... </p>' +
-                '<a href="#" class="btn btn-primary">View</a>' +
+                '<a href="product_details.html" onclick="showDetails()"" class="btn btn-warning">View Details</a>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
@@ -40,5 +40,12 @@ $(document).ready(function () {
         // this method overwrite the html of the existing one with renderedHTML string
         $("#products").html(renderedHTML);
     };
+
+
+    function showDetails(){
+        console.log("go to details view!");
+        localStorage.setItem('FLOWER-SHOP-LOGGED-IN-USER', JSON.stringify(data));
+        window.location.href = "product_details.html";
+        }
 
 });
