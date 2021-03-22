@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-	<script language="javascript" type="text/javascript" 
-  src="./includes/header.txt"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script language="javascript" type="text/javascript" src="./includes/header.txt"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <body>
-    <header>
-      <div class="nav_container">
-        <div id="branding">
-            <h1><span class="highlight">Flower Power</span> Florististic</h1>
-        </div>
-        <nav class="top-nav">
-          <ul>
-            <li ><a href="welcome.html">Welcome</a></li>
-            <li><a href="shopping.html"><ion-icon name="rose"></ion-icon>Shop</a></li>
-            <li  class="cart"><a href="shopping_cart.html"><ion-icon name="cart"></ion-icon> ShoppingCart <span> 0</span></a></li>
-            <li><a href="checkout.html">Checkout</a></li>
-						<li class="dropdown"> <a href="javascript:void(0)" class="dropbtn">Account</a>
-							<div class="dropdown-content">
-								<a href="user_profile.html">Profile</a>
-								<a href="order_history.html">Orders</a>
-							</div></li>
-            <li><a href="index.html">Logout</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-   <br><br><br><br><br>
-   <section id="showcase">
-    <div class="container">
-			<main class="ml-5 mr-5">
-			<div class="card border-dark">
-				<table class="table table-striped">
-					<thead>
-							<tr>
-									<th scope="col"> </th>
-									<th scope="col">Product</th>
-									<th scope="col">Order Date</th>
-									<th scope="col" class="text-center">Quantity</th>
-									<th scope="col" class="text-right">Total</th>
-									<th> </th>
-							</tr>
-					</thead>
-					<tbody>
-							<tr>
-									<td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-									<td>Product Name Dada</td>
-									<td>19/03/2021</td>
-									<td>1</td>
-									<td class="text-right">124,90 €</td>
-									<td class="text-right"><button class="btn btn-sm btn-warning">Write a product review</i> </button> </td>
-							</tr>
-					</tbody>
-			</table>
-		
+	<header>
+		<div class="nav_container">
+			<div id="branding">
+				<h1><span class="highlight">Flower Power</span> Florististic</h1>
 			</div>
+			<nav class="top-nav">
+				<ul>
+					<li><a href="welcome.html">Welcome</a></li>
+					<li><a href="shopping.html">
+							<ion-icon name="rose"></ion-icon>Shop
+						</a></li>
+					<li class="cart"><a href="shopping_cart.html">
+							<ion-icon name="cart"></ion-icon> ShoppingCart <span> 0</span>
+						</a></li>
+					<li><a href="checkout.html">Checkout</a></li>
+					<li class="dropdown"> <a href="javascript:void(0)" class="dropbtn">Account</a>
+						<div class="dropdown-content">
+							<a href="user_profile.html">Profile</a>
+							<a href="order_history.html">Orders</a>
+						</div>
+					</li>
+					<li><a href="index.html">Logout</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<br><br><br><br><br>
+	<section id="showcase">
+		<div class="container">
+			<main class="ml-5 mr-5">
+				<div class="card border-dark">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col">Product</th>
+								<th scope="col">Order Date</th>
+								<th scope="col">Tracking Vendor</th>
+								<th scope="col" class="text-center">Tracking ID</th>
+								<th scope="col" class="text-right">Cost</th>
+							</tr>
+						</thead>
+						<tbody id = "orderHistory">
+							<tr>
+								<td>Product Name Dada</td>
+								<td>19/03/2021</td>
+								<td>UPS</td>
+								<td>asdasdf</td>
+								<td class="text-right">124,90 €</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
 			</main>
-		<br><br><br><br><br>
-          <script language="javascript" type="text/javascript" 
-					src="./includes/footer.txt"></script>
-        </div>
-    </section>
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+			<br><br><br><br><br>
+			<script language="javascript" type="text/javascript" src="./includes/footer.txt"></script>
+			<script language="javascript" type="text/javascript" src="./js/history.js"></script>
+		</div>
+	</section>
+	<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </body>
 
 </html>

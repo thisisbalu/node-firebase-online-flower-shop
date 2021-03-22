@@ -72,4 +72,6 @@ function renderHTML(products) {
     $("#cartBody").append(shippingHTML);
     $("#cartBody").append(taxHTML);
     $("#cartBody").append(totalHTML);
+    localStorage.setItem('FLOWER-SHOP-CART-COST', total.toString());
+
 }

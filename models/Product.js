@@ -4,7 +4,7 @@ const uniqid = require('uniqid');
 const ProductSchema = mongoose.Schema({
 	sku: {
 		type: String,
-		default: uniqid.time().toUpperCase()
+		default: uniqid().toUpperCase()
 	},
 	title: {
 		type: String,

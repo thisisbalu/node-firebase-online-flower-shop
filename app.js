@@ -12,6 +12,7 @@ require('dotenv/config');
 const userRoutes = require('./routes/users');
 const { options } = require('./routes/users');
 const productRoutes = require('./routes/products');
+const orderRoutes = require('./routes/orders');
 //const { options } = require('./routes/items');
 
 // Middleware
@@ -33,6 +34,7 @@ app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }));
 app.use(bodyParser.text({ type: 'text/html' }));
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
+app.use('/orders', orderRoutes);
 app.use(express.static("web", options));
 router.get('/', function (req, res) {
     res.render('./index.html');
