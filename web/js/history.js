@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    var itemsInCart = localStorage.getItem('FLOWER-SHOP-CART');
+	itemsInCart = JSON.parse(itemsInCart);
+	$("#cartCount").html(!itemsInCart ? '(0)' : '(' + itemsInCart.length + ')');
+    
     console.log("im in");
 
     var user = JSON.parse(localStorage.getItem('FLOWER-SHOP-LOGGED-IN-USER'));

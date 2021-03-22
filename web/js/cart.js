@@ -75,3 +75,12 @@ function renderHTML(products) {
     localStorage.setItem('FLOWER-SHOP-CART-COST', total.toString());
 
 }
+
+
+// $("#cartCheckout").on("click", function () {
+//     console.log("checkout!");
+//     // $.fn.deleteItem();
+//     itemsInCart.clear();
+//     total = 0;
+//     shipping = 0;
+// });

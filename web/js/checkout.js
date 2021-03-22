@@ -1,5 +1,13 @@
 var inputs = document.querySelectorAll("input");
 console.log(inputs);
+var itemsInCart = localStorage.getItem('FLOWER-SHOP-CART');
+console.log(itemsInCart);
+	itemsInCart = JSON.parse(itemsInCart);
+	$("#cartCount").html(!itemsInCart ? '(0)' : '(' + itemsInCart.length + ')');
+
+	var cost = localStorage.getItem('FLOWER-SHOP-CART-COST');
+	cost = Number(cost);
+  console.log(cost);
 
 var pattern = {
 
@@ -64,7 +72,7 @@ $("#checkout").on('click', function () {
 		var user = JSON.parse(localStorage.getItem('FLOWER-SHOP-LOGGED-IN-USER'));
 		var cost = localStorage.getItem('FLOWER-SHOP-CART-COST');
 		cost = Number(cost);
-
+console.log(cost);
 		var itemsInCart = localStorage.getItem('FLOWER-SHOP-CART');
 		itemsInCart = JSON.parse(itemsInCart);
 		var products = [];
@@ -109,6 +117,11 @@ $("#checkout").on('click', function () {
 				window.location.href = "/shopping.html";
 			}
 		});
+
+		localStorage.removeItem('FLOWER-SHOP-CART');
+		localStorage.removeItem('FLOWER-SHOP-CART-COST');
+
+		alert("Thank you for your purchase !!! ");
 	}
 	else {
 		alert("Please note that all nonoptional fields are required !!! ");
@@ -117,7 +130,7 @@ $("#checkout").on('click', function () {
 
 $(document).ready(function () {
 	function buttonClicked(e) {
-
+	
 	}
 });
 
