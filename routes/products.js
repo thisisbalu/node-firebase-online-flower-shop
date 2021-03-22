@@ -12,10 +12,10 @@ router.get('/', async (req, res) => {
 	}
 });
 
-router.get('/:title', async (req, res) => {
+router.get('/:sku', async (req, res) => {
 	try {
 		const product = await Product.find({
-			title: req.params.title
+			sku: req.params.sku
 		});
 		res.status(200).json(product);
 	} catch (err) {

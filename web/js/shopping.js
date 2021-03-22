@@ -19,7 +19,7 @@ $(document).ready(function () {
         var renderedHTML = "";
         for (var i = 0; i < products.length; i++) {
             var product = products[i];
-            var productDetailsPage = "product_details.html?" + product.sku;
+            var productDetailsPage = "product_details.html?sku=" + product.sku;
             renderedHTML = renderedHTML +
                 '<div class="col-sm mb-3">' +
                 '<div class="card" style="width: 18rem;">' +
@@ -29,25 +29,16 @@ $(document).ready(function () {
                 '<div class="card-body">' +
                 '<h5 class="card-title"> ' + product.title.substring(0, 25) + ' </h5>' +
                 '<p class="card-text"> ' + product.description.substring(0, 100) + '... </p>' +
-                '<a href="' + productDetailsPage + '" onclick="showDetails(this)"" class="btn btn-warning">View Details</a>' +
+                '<a href="' + productDetailsPage + '"   onclick="showDetails(this)"" class="btn btn-warning">View Details</a>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
                 '</div>';
         }
-        console.log(renderedHTML);
         // products is the ID i have attached to the html tag for class row check in shopping.html
         // html method of the jquery is quivalent of innerHTML of the vanilla javascript
         // this method overwrite the html of the existing one with renderedHTML string
         $("#products").html(renderedHTML);
     };
-
-
-    s.fn.showDetails = function(e){
-        console.log("go to details view!");
-        localStorage.setItem('FLOWER-SHOP-LOGGED-IN-USER', JSON.stringify(data));
-        console.log(e);
-        window.location.href = "product_details.html";
-        }
 
 });
