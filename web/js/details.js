@@ -5,7 +5,6 @@ $(document).ready(function () {
 	itemsInCart = JSON.parse(itemsInCart);
 	$("#cartCount").html(!itemsInCart ? '(0)' : '(' + itemsInCart.length + ')');
 
-	var prod = [];
 
 	//we get parameter 'sku' from url on product_details.html
 	const urlString = window.location.href;
@@ -121,4 +120,5 @@ var addToCart = function () {
 		localStorage.setItem('FLOWER-SHOP-CART', JSON.stringify(items));
 		$("#cartCount").html(items.length);
 	}
-};
+}; 
+

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script language="javascript" type="text/javascript" src="./includes/header.txt"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <body>
   <header>
@@ -15,7 +16,7 @@
               <ion-icon name="rose"></ion-icon>Shop
             </a></li>
           <li class="cart"><a href="shopping_cart.html">
-              <ion-icon name="cart"></ion-icon> ShoppingCart <span> 0</span>
+              <ion-icon name="cart"></ion-icon> ShoppingCart <span id="cartCount"> 0</span>
             </a></li>
           <li class="dropdown"> <a href="javascript:void(0)" class="dropbtn">Account</a>
             <div class="dropdown-content">
@@ -35,7 +36,10 @@
   <section id="showcase">
     <div class="container">
       <div class="welcome-box">
+       
         <h1>Welcome back to Flower Power</h1>
+        <h2 id="firstName">
+        </h2>
         <p>
         <h4>We are proud to help you celebrate life by translating your message into the beautiful language of fresh
           flowers!</h4>
@@ -45,6 +49,7 @@
     </div>
   </section>
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="./js/profile.js"></script>
 </body>
 
 </html>

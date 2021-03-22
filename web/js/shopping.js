@@ -1,5 +1,8 @@
 $(document).ready(function () {
-
+	var itemsInCart = localStorage.getItem('FLOWER-SHOP-CART');
+	itemsInCart = JSON.parse(itemsInCart);
+	$("#cartCount").html(!itemsInCart ? '(0)' : '(' + itemsInCart.length + ')');
+    
     $.ajax({
         url: '/products/',
         type: 'GET',

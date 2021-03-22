@@ -18,14 +18,13 @@
           <ul>
             <li ><a href="welcome.html">Welcome</a></li>
             <li><a href="shopping.html"><ion-icon name="rose"></ion-icon>Shop</a></li>
-            <li  class="cart"><a href="shopping_cart.html"><ion-icon name="cart"></ion-icon> ShoppingCart <span> 0</span></a></li>
-            <li><a href="checkout.html">Checkout</a></li>
+            <li  class="cart"><a href="shopping_cart.html"><ion-icon name="cart"></ion-icon> ShoppingCart <span id="cartCount"> 0</span></a></li>
 						<li class="dropdown"> <a href="javascript:void(0)" class="dropbtn">Account</a>
 							<div class="dropdown-content">
 								<a href="user_profile.html">Profile</a>
 								<a href="order_history.html">Orders</a>
 							</div></li>
-            <li><a href="index.html">Logout</a></li>
+              <li><a href="logout.html">Logout</a></li>
           </ul>
         </nav>
       </div>
@@ -52,60 +51,69 @@
 								<div class="col-md-8">
 										<div class="tab-content profile-tab" id="myTabContent">
 												<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-																		<div class="row">
+																		<!-- <div class="row">
 																				<div class="col-md-6">
 																						<label>User Id</label>
 																				</div>
-																				<div class="col-md-6">
-																						<p>Kshiti123</p>
+																				<div class="col-md-6" id="userId">
+																					 <p>Kshiti123</p> 
 																				</div>
-																		</div>
+																		</div> -->
+																		<div class="row">
+																			<div class="col-md-6">
+																					<label>Username</label>
+																			</div>
+																			<div class="col-md-6"  id="userName">
+																					<!-- <p>Kshiti</p> -->
+																			</div>
+																	</div>
+
 																		<div class="row">
 																				<div class="col-md-6">
 																						<label>First Name</label>
 																				</div>
-																				<div class="col-md-6">
-																						<p>Kshiti</p>
+																				<div class="col-md-6"  id="firstName">
+																						<!-- <p>Kshiti</p> -->
 																				</div>
 																		</div>
 																		<div class="row">
 																			<div class="col-md-6">
 																					<label>Last Name</label>
 																			</div>
-																			<div class="col-md-6">
-																					<p>Harris</p>
+																			<div class="col-md-6" id="lastName">
+																					<!-- <p>Harris</p> -->
 																			</div>
 																	</div>
 																		<div class="row">
 																				<div class="col-md-6">
 																						<label>Email</label>
 																				</div>
-																				<div class="col-md-6">
-																						<p>kshitiharris@gmail.com</p>
+																				<div class="col-md-6"  id="email">
+																						<!-- <p>kshitiharris@gmail.com</p> -->
 																				</div>
 																		</div>
 																		<div class="row">
 																				<div class="col-md-6">
 																						<label>Phone</label>
 																				</div>
-																				<div class="col-md-6">
-																						<p>123 456 7890</p>
+																				<div class="col-md-6"  id="phone">
+																						<!-- <p>123 456 7890</p> -->
 																				</div>
 																		</div>
 																		<div class="row">
 																			<div class="col-md-6">
 																					<label>Address</label>
 																			</div>
-																			<div class="col-md-6">
-																					<p>Montreal</p>
+																			<div class="col-md-6"  id="address">
+																					<!-- <p>Montreal</p> -->
 																			</div>
 																	</div>
 																		<div class="row">
 																				<div class="col-md-6">
 																						<label>Password</label>
 																				</div>
-																				<div class="col-md-6">
-																						<p>happy</p>
+																				<div class="col-md-6"  id="password">
+																						<!-- <p>happy</p> -->
 																				</div>
 																		</div>
 												</div>
@@ -121,6 +129,7 @@
         </div>
     </section>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+		<script src="./js/profile.js"></script>
 </body>
 
 </html>
