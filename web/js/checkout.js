@@ -1,5 +1,4 @@
-var inputs = document.querySelectorAll("input");
-console.log(inputs);
+
 var itemsInCart = localStorage.getItem('FLOWER-SHOP-CART');
 console.log(itemsInCart);
 	itemsInCart = JSON.parse(itemsInCart);
@@ -9,36 +8,6 @@ console.log(itemsInCart);
 	cost = Number(cost);
   console.log(cost);
 
-var pattern = {
-
-	card_number: /^[0-9]{15,16}$/,            //only numbers can be entered, at least 15 simbol and 16 max simbol
-	cvc: /^[0-9]{3,3}$/,                      //only three-digit numbers can be entered
-	card_name: /^[A-Z]{3,15}\s[A-Z]{3,15}$/,  // uppercase only First name and Last name separated by space. Every name must be contain at least 3 to 15 letters
-	expiration: /^([\d]{2,2}\/[\d]{2,2})$/,  // Must contain only 4 digits. 2 digist and 2 digist separated by a slash. Exm: 22/22
-	name: /^[A-Z]{1,1}[a-z]{2,14}\s[A-Z]{1,1}[a-z]{2,14}$/, //name must be contain full name (First name+Last name).First letter in uppercase subsequent letter in lowcase. First name and last name separated by space.  
-	city: /^[A-Z]{1,1}[a-z A-Z]+$/,
-	postalcode: /^[A-Z]{1,1}[0-9]{1,1}[A-Z]{1,1}[0-9]{1,1}[A-Z]{1,1}[0-9]{1,1}$/,/* Every postale code must be contain: uppercase later, digital, uppercase later, digital, uppercase later, digital */
-	province: /^[A-Z]{1,1}[a-z A-Z]+$/
-}
-
-function validate(field, regex) {
-	if (regex.test(field.value)) {
-		field.className = "valid";
-	} else {
-		field.className = "invalid";
-	}
-}
-// document.querySelector("form").addEventListener("submit", function (e) {
-// 	if (!validate()) {
-// 			e.preventDefault();
-// 	}
-// });
-
-inputs.forEach((input) => {
-	input.addEventListener("keyup", (e) => {
-		validate(e.target, pattern[e.target.attributes.name.value]);
-	})
-})
 
 // ==========================function for button Continue=======================
 
@@ -133,5 +102,108 @@ $(document).ready(function () {
 	
 	}
 });
+
+//MasterCard checked
+checkbox_mscard=document.querySelector('#mscard');
+checkbox_mscard.onclick = function(){
+
+    if(checkbox_mscard.checked){
+        alert('You will use Master card'); 
+        
+        document.getElementById('cc-number').setAttribute("maxlength","16");
+        document.getElementById('cc-number').setAttribute("minlength","16")
+
+    }
+};
+
+//AmericanExpress card checked
+checkbox_amcard=document.querySelector('#amcard');
+checkbox_amcard.onclick = function(){
+
+    if(checkbox_amcard.checked){
+        alert('You will use American Express card'); 
+        
+        document.getElementById('cc-number').setAttribute("maxlength","16");
+        document.getElementById('cc-number').setAttribute("minlength","16")
+    }
+    else{
+        alert('chekbox off'); 
+        
+    }
+};
+
+//Visa card checked
+checkbox_vscard=document.querySelector('#vscard');
+checkbox_vscard.onclick = function(){
+
+    if(checkbox_vscard.checked){
+        alert('You will use Visa card'); 
+        
+        document.getElementById('cc-number').setAttribute("maxlength","15");
+        document.getElementById('cc-number').setAttribute("minlength","15")
+     
+    }
+    
+};
+
+var inputs = document.querySelectorAll("input");
+console.log(inputs);
+
+var pattern = {
+    card_number:/^[0-9]{15,16}$/,            //only numbers can be entered, at least 15 simbol and 16 max simbol
+    cvc:/^[0-9]{3,3}$/,                      //only three-digit numbers can be entered
+		card_name:/^[A-Z]{3,15}\s[A-Z]{3,15}$/,  // uppercase only First name and Last name separated by space. Every name must be contain at least 3 to 15 letters
+    expiration:/^([\d]{2,2}\/[\d]{2,2})$/,  // Must be contain only 4 digits. 2 digist and 2 digist separated by a slash. Exm: 22/22
+    name:/^[A-Z]{1,1}[a-z]{2,14}\s[A-Z]{1,1}[a-z]{2,14}$/, //name must be contain full name (First name+Last name).First letter in uppercase subsequent letter in lowcase. First name and last name separated by space.  
+    city:/^[A-Z]{1,1}[a-z A-Z]+$/,
+    postalcode:/^[A-Z]{1,1}[0-9]{1,1}[A-Z]{1,1}[0-9]{1,1}[A-Z]{1,1}[0-9]{1,1}$/,/* Every postale code must be contain: uppercase later, digital, uppercase later, digital, uppercase later, digital */ 
+    province:/^[A-Z]{1,1}[a-z A-Z]+$/
+}
+
+function validate(field, regex){
+	
+	if(regex.test(field.value)){
+		
+		field.className = "valid";
+	}else{
+		field.className = "invalid";
+	}
+}
+
+inputs.forEach((input)=>{
+	input.addEventListener("keyup",(e)=>{
+	    validate(e.target, pattern[e.target.attributes.name.value]);
+	})
+})
+var J = Payment.J,
+  numeric = document.querySelector('[data-numeric]'),
+  number = document.querySelector('.cc-number'),
+  exp = document.querySelector('.cc-exp'),
+  cvc = document.querySelector('.cc-cvc'),
+  validation = document.querySelector('.validation');
+
+// Payment.restrictNumeric(numeric);
+ Payment.formatCardNumber(number);
+Payment.formatCardExpiry(exp);
+Payment.formatCardCVC(cvc);
+
+document.querySelector('form').onsubmit = function(e) {
+  e.preventDefault();
+  J.toggleClass(document.querySelectorAll('input'), 'invalid');
+  J.removeClass(validation, 'passed failed');
+
+  var cardType = Payment.fns.cardType(J.val(number));
+
+ J.toggleClass(number, 'invalid', !Payment.fns.validateCardNumber(J.val(number)));
+  J.toggleClass(exp, 'invalid', !Payment.fns.validateCardExpiry(Payment.cardExpiryVal(exp)));
+
+  J.toggleClass(cvc, 'invalid', !Payment.fns.validateCardCVC(J.val(cvc), cardType));
+
+  if (document.querySelectorAll('.invalid').length) {
+    J.addClass(validation, 'failed');
+  } else {
+    J.addClass(validation, 'passed');
+  }
+}
 
 

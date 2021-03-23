@@ -42,34 +42,17 @@
   </header>
 
   <section id="showcase_checkout">
-    <!-- <div class="container">
-       <div class="invoice-box"> -->
-    <!--Main layout-->
-    <!--<main class="mt-5 pt-4">-->
     <main class="ml-1 mr-5">
       <div class="container wow fadeIn">
-        <!-- Heading -->
         <h2 class="my-5 h2 text-center">Finalize your payment</h2>
 
-        <!--Grid row-->
         <div class="row">
-
-          <!--Grid column-->
-          <!--<div class="col-md-8 mb-4">-->
           <div class="col">
             <!--Card-->
             <div class="card">
-
-              <!--Card content-->
               <form class="card-body needs-validation" novalidate>
-
-                <!--Grid row-->
                 <div class="row">
-
-                  <!--Grid column-->
                   <div class="col-md-6 mb-2">
-
-                    <!--firstName-->
                     <div class="md-form">
                       <input type="text" id="firstName" class="form-control" required>
                       <label for="firstName" class="">First name</label>
@@ -82,9 +65,6 @@
                     </div>
 
                   </div>
-                  <!--Grid column-->
-
-                  <!--Grid column-->
                   <div class="col-md-6 mb-2">
 
                     <!--lastName-->
@@ -98,13 +78,9 @@
                         Please enter your Last name.
                       </div>
                     </div>
-
                   </div>
-                  <!--Grid column-->
-
                 </div>
                 <br><br>
-                <!--Grid row-->
                 <!--address-->
                 <div class="md-form mb-5">
                   <input type="text" id="address" class="form-control" placeholder="1234 Main St" required>
@@ -121,11 +97,7 @@
                   <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
                   <label for="address-2" class="">Address 2 (optional)</label>
                 </div>
-
-                <!--Grid row-->
                 <div class="row">
-
-                  <!--Grid column-->
                   <div class="col-lg-4 col-md-12 mb-4">
 
                     <label for="country">Country</label>
@@ -141,9 +113,6 @@
                       Please select a country.
                     </div>
                   </div>
-                  <!--Grid column-->
-
-                  <!--Grid column-->
                   <div class="col-lg-4 col-md-6 mb-4">
 
                     <label for="province">Province</label>
@@ -169,8 +138,6 @@
                       Please select a province.
                     </div>
                   </div>
-                  <!--Grid column-->
-                  <!--Grid column-->
                   <div class="col-lg-4 col-md-6 mb-4">
                     <label for="postalcode">Postal code</label>
                     <input type="text" class="form-control" id="postalcode" placeholder="" required>
@@ -181,9 +148,7 @@
                       Postal code is required.
                     </div>
                   </div>
-                  <!--Grid column-->
                 </div>
-                <!--Grid row-->
                 <hr>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="same-address">
@@ -195,20 +160,22 @@
                   <label class="custom-control-label" for="save-info">Save this information for next time</label>
                 </div>
                 <hr>
-                <div class="d-block my-3">
-                  <div class="custom-control custom-radio">
-                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                    <label class="custom-control-label" for="credit">Credit card</label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                    <label class="custom-control-label" for="debit">Debit card</label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                    <label class="custom-control-label" for="paypal">Paypal</label>
-                  </div>
-                </div>
+
+                <div class="row" id="chooseMethodOfPayment">
+                  <label>
+                  <input id="amcard" name="typecard" type="radio" value="amexpcard">
+                  <img src="./media/amexp.jpg">
+                </label>
+                <label>
+                  <input id="mscard" name="typecard" type="radio" value="mastercard">
+                  <img src="./media/mastercard.jpg">
+                </label>
+                <label>
+                  <input id="vscard" name="typecard" type="radio" value="visacard" >
+                  <img src="./media/visa.jpg">
+                </label>
+          </div>
+          <hr>
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="cc-name">Name on card</label>
@@ -223,7 +190,8 @@
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="cc-number">Credit card number</label>
-                    <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                   
+                    <input type="text"  class="form-control cc-number" pattern="\d*" x-autocompletetype="cc-number" placeholder="Card number" id="cc-number" required>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -235,7 +203,8 @@
                 <div class="row">
                   <div class="col-md-3 mb-3">
                     <label for="cc-expiration">Expiration</label>
-                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                    <input type="text" name="expiration" id="cc-exp" class="form-control cc-exp" pattern="\d*" x-autocompletetype="cc-exp" placeholder="MM/YY" required maxlength="9">
+                    <p>Expiration date date must contain 4 digital number between them /  Ex:02/20 </p>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -244,8 +213,9 @@
                     </div>
                   </div>
                   <div class="col-md-3 mb-3">
-                    <label for="cc-expiration">CVV</label>
-                    <input type="text" class="form-control" id="cvc" placeholder="" required>
+                    <label for="cc-expiration">CVC</label>
+                    <input type="text" name="cvc"  pattern="\d*" x-autocompletetype="cc-csc" class="form-control cc-cvc" id="cvc" placeholder="" required>
+                    <p>CVC code must contain 3 digital numbers</p>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -280,22 +250,15 @@
               </form>
 
             </div>
-            <!--/.Card-->
+            <!--/Card-->
           </div>
-          <!--</div>-->
-          <!--Grid column-->
         </div>
-        <!--Grid row-->
       </div>
     </main>
-    <!--Main layout-->
   </section>
   <script language="javascript" type="text/javascript" src="./includes/footer.txt"></script>
   <script language="javascript" type="text/javascript" src="./js/checkout.js"></script>
-
-  <!-- </section> -->
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-  <!--<script src="./js/checkout.js"></script>-->
   <script>(function () {
       'use strict';
       window.addEventListener('load', function () {
