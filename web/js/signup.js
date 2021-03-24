@@ -4,12 +4,25 @@ $(document).ready(function () {
 		window.location.href = "/welcome.html";
 	}
 
+	//check email format
+	var $email = $('#email');
+	var re = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+	$('#email').on('keyup', function () {
+	if (re.test($email.val())) {
+		$('#emailMessage').html('Perfect email format! Well done!').css('color', 'green');
+		return true;
+	} else
+		$('#emailMessage').html('Please check the Email format').css('color', 'red');
+			return false;
+});
+
+//check passwords equality
 	$('#password, #confirm_password').on('keyup', function () {
 		if ($('#password').val() == $('#confirm_password').val()) {
 			$('#message').html('Passwords match! Well done!').css('color', 'green');
 		} else
 			$('#message').html('Passwords do not match').css('color', 'red');
-			return;
+	return;
 	});
 
 	$("#register").on("click", function () {
@@ -23,6 +36,7 @@ $(document).ready(function () {
 		var password = $("#confirm_password").val();
 		if (username.trim() == "" || email.trim() == "" || password.trim() == "") {
 			alert("Please fill all the fields");
+		
 		}
 		else {
 			var payload = {
@@ -47,8 +61,7 @@ $(document).ready(function () {
 					if (!!data && data.length == 0) {
 						$.fn.addUser(payload);
 					} else {
-						alert("User already exist with the provided username, Please provide different username.");
-					
+						alert("User already exists with the provided username, Please provide different username.");
 					}
 				}
 			});
@@ -70,3 +83,4 @@ $(document).ready(function () {
 		});
 	};
 });
+
