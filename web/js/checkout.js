@@ -86,11 +86,9 @@ console.log(cost);
 				window.location.href = "/shopping.html";
 			}
 		});
-
-		localStorage.removeItem('FLOWER-SHOP-CART');
-		localStorage.removeItem('FLOWER-SHOP-CART-COST');
-
-		alert("Thank you for your purchase !!! ");
+				localStorage.removeItem('FLOWER-SHOP-CART');
+				localStorage.removeItem('FLOWER-SHOP-CART-COST');
+				alert("Thank you for your purchase !!! ");
 	}
 	else {
 		alert("Please note that all nonoptional fields are required !!! ");
@@ -102,6 +100,7 @@ $(document).ready(function () {
 	
 	}
 });
+
 
 //MasterCard checked
 checkbox_mscard=document.querySelector('#mscard');
@@ -138,26 +137,21 @@ checkbox_vscard.onclick = function(){
 
     if(checkbox_vscard.checked){
         alert('You will use Visa card'); 
-        
         document.getElementById('cc-number').setAttribute("maxlength","15");
         document.getElementById('cc-number').setAttribute("minlength","15")
-     
     }
-    
 };
 
 var inputs = document.querySelectorAll("input");
 console.log(inputs);
 
 var pattern = {
-    card_number:/^[0-9]{15,16}$/,            //only numbers can be entered, at least 15 simbol and 16 max simbol
+	card_number:/^[0-9]{15,16}$/,            //only numbers can be entered, at least 15 simbol and 16 max simbol
     cvc:/^[0-9]{3,3}$/,                      //only three-digit numbers can be entered
 		card_name:/^[A-Z]{3,15}\s[A-Z]{3,15}$/,  // uppercase only First name and Last name separated by space. Every name must be contain at least 3 to 15 letters
     expiration:/^([\d]{2,2}\/[\d]{2,2})$/,  // Must be contain only 4 digits. 2 digist and 2 digist separated by a slash. Exm: 22/22
-    name:/^[A-Z]{1,1}[a-z]{2,14}\s[A-Z]{1,1}[a-z]{2,14}$/, //name must be contain full name (First name+Last name).First letter in uppercase subsequent letter in lowcase. First name and last name separated by space.  
-    city:/^[A-Z]{1,1}[a-z A-Z]+$/,
+    name:/^[A-Z]{1,1}[a-z]{2,14}\s[A-Z]{1,1}[a-z]{2,14}$/, //name must be contain full name (First name+Last name).First letter in uppercase subsequent letter in lowcase. First name and last name separated by space. 
     postalcode:/^[A-Z]{1,1}[0-9]{1,1}[A-Z]{1,1}[0-9]{1,1}[A-Z]{1,1}[0-9]{1,1}$/,/* Every postale code must be contain: uppercase later, digital, uppercase later, digital, uppercase later, digital */ 
-    province:/^[A-Z]{1,1}[a-z A-Z]+$/
 }
 
 function validate(field, regex){
@@ -175,6 +169,21 @@ inputs.forEach((input)=>{
 	    validate(e.target, pattern[e.target.attributes.name.value]);
 	})
 })
+
+window.addEventListener('load', function () {
+	// Fetch all the forms we want to apply custom Bootstrap validation styles to
+	var forms = document.getElementsByClassName('needs-validation');
+	// Loop over them and prevent submission
+	var validation = Array.prototype.filter.call(forms, function (form) {
+		form.addEventListener('submit', function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+			form.classList.add('was-validated');
+		}, false);
+	});
+}, false);
+
+//validation of card number expiration date, cvc.
 var J = Payment.J,
   numeric = document.querySelector('[data-numeric]'),
   number = document.querySelector('.cc-number'),
@@ -182,12 +191,12 @@ var J = Payment.J,
   cvc = document.querySelector('.cc-cvc'),
   validation = document.querySelector('.validation');
 
-// Payment.restrictNumeric(numeric);
- Payment.formatCardNumber(number);
-Payment.formatCardExpiry(exp);
-Payment.formatCardCVC(cvc);
+	Payment.restrictNumeric(numeric);
+  Payment.formatCardNumber(number);
+	Payment.formatCardExpiry(exp);
+	Payment.formatCardCVC(cvc);
 
-document.querySelector('form').onsubmit = function(e) {
+document.querySelector('form').onsubmit = function(e) { 
   e.preventDefault();
   J.toggleClass(document.querySelectorAll('input'), 'invalid');
   J.removeClass(validation, 'passed failed');
@@ -196,7 +205,6 @@ document.querySelector('form').onsubmit = function(e) {
 
  J.toggleClass(number, 'invalid', !Payment.fns.validateCardNumber(J.val(number)));
   J.toggleClass(exp, 'invalid', !Payment.fns.validateCardExpiry(Payment.cardExpiryVal(exp)));
-
   J.toggleClass(cvc, 'invalid', !Payment.fns.validateCardCVC(J.val(cvc), cardType));
 
   if (document.querySelectorAll('.invalid').length) {

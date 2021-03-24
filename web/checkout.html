@@ -140,7 +140,7 @@
                   </div>
                   <div class="col-lg-4 col-md-6 mb-4">
                     <label for="postalcode">Postal code</label>
-                    <input type="text" class="form-control" id="postalcode" placeholder="" required>
+                    <input type="text" class="form-control postalCode" id="postalcode" placeholder="" required>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -190,8 +190,7 @@
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="cc-number">Credit card number</label>
-                   
-                    <input type="text"  class="form-control cc-number" pattern="\d*" x-autocompletetype="cc-number" placeholder="Card number" id="cc-number" required>
+                    <input type="text" class="form-control cc-number" pattern="\d*" x-autocompletetype="cc-number" placeholder="Card number" id="cc-number" required>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -203,8 +202,8 @@
                 <div class="row">
                   <div class="col-md-3 mb-3">
                     <label for="cc-expiration">Expiration</label>
-                    <input type="text" name="expiration" id="cc-exp" class="form-control cc-exp" pattern="\d*" x-autocompletetype="cc-exp" placeholder="MM/YY" required maxlength="9">
-                    <p>Expiration date date must contain 4 digital number between them /  Ex:02/20 </p>
+                    <input type="text" name="expiration" id="cc-expiration" class="form-control cc-exp" pattern="\d*" x-autocompletetype="cc-exp" placeholder="MM/YY" required maxlength="9">
+                    <p>Expiration date date must contain 4 digital numbers separated by a slash 02/23 </p>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -220,7 +219,7 @@
                       Looks good!
                     </div>
                     <div class="invalid-feedback">
-                      CVC code must contain 3 digital number
+                      CVC code must contain 3 digital numbers
                     </div>
                   </div>
                 </div>
@@ -248,7 +247,6 @@
                   </div>
                 </div>
               </form>
-
             </div>
             <!--/Card-->
           </div>
@@ -259,21 +257,5 @@
   <script language="javascript" type="text/javascript" src="./includes/footer.txt"></script>
   <script language="javascript" type="text/javascript" src="./js/checkout.js"></script>
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-  <script>(function () {
-      'use strict';
-      window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function (form) {
-          form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();</script>
 </body>
-
 </html>
