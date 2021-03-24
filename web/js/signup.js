@@ -9,6 +9,7 @@ $(document).ready(function () {
 			$('#message').html('Passwords match! Well done!').css('color', 'green');
 		} else
 			$('#message').html('Passwords do not match').css('color', 'red');
+			return;
 	});
 
 	$("#register").on("click", function () {
@@ -47,6 +48,7 @@ $(document).ready(function () {
 						$.fn.addUser(payload);
 					} else {
 						alert("User already exist with the provided username, Please provide different username.");
+					
 					}
 				}
 			});

@@ -58,6 +58,8 @@ $(document).ready(function () {
 			'</ul>' +
 			'<div>' + '<br><br><br>' +
 			'<button type="button" onclick="addToCart()" id="addToCart" class="btn btn-lg btn-warning">Add to cart</button>	' +
+			'<button type="button" onclick="goToShop()" id="goToShop" class="btn btn-lg btn-warning"><a href="shopping.html" style="text-decoration:none; color:black">Continue shopping</a></button>	' +
+			'<button type="button"  id="goToCart" class="btn btn-lg btn-warning"><a href="shopping_cart.html" style="text-decoration:none; color:black">Go to cart</a></button>	' +
 			'</div>' +
 			'</div>' +
 			'</div>';
