@@ -27,7 +27,7 @@ $(document).ready(function () {
 
 var emptyCartHTML = "";
 emptyCartHTML = '<tr>' +
-        '<td  align="center" colspan="5">You have not choose any bouqet yet</td>' +
+        '<td  align="center" colspan="5">You have not choose any bouquet yet</td>' +
         '</tr>';
 
 
