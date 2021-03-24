@@ -1,5 +1,14 @@
 var allCartItems = [];
 
+// $(document).ready(function () {
+//     var itemsInCart = localStorage.getItem('FLOWER-SHOP-CART');
+//     itemsInCart = JSON.parse(itemsInCart);
+//     $("#cartCount").html(!itemsInCart ? '(0)' : '(' + itemsInCart.length + ')');
+//     if (itemsInCart) {
+//         allCartItems = itemsInCart;
+//     }
+//     renderHTML(allCartItems);
+// });
 $(document).ready(function () {
     var itemsInCart = localStorage.getItem('FLOWER-SHOP-CART');
     itemsInCart = JSON.parse(itemsInCart);
@@ -8,7 +17,19 @@ $(document).ready(function () {
         allCartItems = itemsInCart;
     }
     renderHTML(allCartItems);
+    if(itemsInCart == 0)
+    {
+        $("#cartBody").html(emptyCartHTML);
+        document.getElementsByName("btnCheckout")[0].style.visibility = "hidden";
+    }
+    
 });
+
+var emptyCartHTML = "";
+emptyCartHTML = '<tr>' +
+        '<td  align="center" colspan="5">You have not choose any bouqet yet</td>' +
+        '</tr>';
+
 
 function deleteItem(ele) {
     const sku = ele.id;
@@ -75,12 +96,3 @@ function renderHTML(products) {
     localStorage.setItem('FLOWER-SHOP-CART-COST', total.toString());
 
 }
-
-
-// $("#cartCheckout").on("click", function () {
-//     console.log("checkout!");
-//     // $.fn.deleteItem();
-//     itemsInCart.clear();
-//     total = 0;
-//     shipping = 0;
-// });
