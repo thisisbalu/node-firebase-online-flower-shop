@@ -1,8 +1,9 @@
+var allProducts = [];
 $(document).ready(function () {
-	var itemsInCart = localStorage.getItem('FLOWER-SHOP-CART');
-	itemsInCart = JSON.parse(itemsInCart);
-	$("#cartCount").html(!itemsInCart ? '(0)' : '(' + itemsInCart.length + ')');
-    
+    var itemsInCart = localStorage.getItem('FLOWER-SHOP-CART');
+    itemsInCart = JSON.parse(itemsInCart);
+    $("#cartCount").html(!itemsInCart ? '(0)' : '(' + itemsInCart.length + ')');
+
     $.ajax({
         url: '/products/',
         type: 'GET',
@@ -12,9 +13,12 @@ $(document).ready(function () {
         success: function (data) {
             // Here we call the api to get all the products in db
             // and send the data to the following function to render to html
+            allProducts = data;
             $.fn.renderAllProducts(data);
         }
     });
+
+
 
     $.fn.renderAllProducts = function (products) {
         // just iterate the products and create the html into string
@@ -44,4 +48,22 @@ $(document).ready(function () {
         $("#products").html(renderedHTML);
     };
 
+});
+
+$("#search").on("click", function () {
+    console.log("searching...");
+    var searchText = $("#name-to-find").val();
+    console.log(searchText);
+    console.log(allProducts);
+    var searchedProducts = allProducts.filter(function (el) {
+        return el.title.toLowerCase().includes(searchText.toLowerCase());
+    });
+    $.fn.renderAllProducts(searchedProducts);
+});
+
+$('#name-to-find').on('keyup', function () {
+    var searchText = $("#name-to-find").val();
+    if(!searchText) {
+        $.fn.renderAllProducts(allProducts)
+    } 
 });
